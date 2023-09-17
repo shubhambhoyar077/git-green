@@ -3,7 +3,7 @@ import repositoryReducer from './repository/repositorySlice';
 
 const store = configureStore({
   reducer: {
-    capsules: repositoryReducer,
+    repository: repositoryReducer,
   },
 });
 

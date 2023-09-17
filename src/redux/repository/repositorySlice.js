@@ -10,7 +10,9 @@ export const fetchRepository = createAsyncThunk(
   'repository/fetchRepository',
   async () => {
     try {
-      const response = await fetch('http://127.0.0.1:3000/api/repositories');
+      const response = await fetch(
+        'http://127.0.0.1:3000/api/scheduled_commits'
+      );
       if (!response.ok) {
         throw new Error('Please refreash page');
       }
