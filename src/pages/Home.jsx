@@ -32,11 +32,20 @@ const Home = () => {
           {repository.map((repo) => (
             <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
               <td className="px-6 py-4">{repo.commit.commit_message}</td>
+              <td className="px-6 py-4">{repo.repository.name}</td>
               <td className="px-6 py-4">
-                <div className="flex items-center">
-                  <div className="h-2.5 w-2.5 rounded-full bg-green-500 mr-2"></div>{' '}
-                  Online
-                </div>
+                {repo.auto_commit &&
+                  (repo.auto_commit.commit_status ? (
+                    <div className="flex items-center">
+                      <div className="h-2.5 w-2.5 rounded-full bg-green-500 mr-2"></div>
+                      Online
+                    </div>
+                  ) : (
+                    <div className="flex items-center">
+                      <div className="h-2.5 w-2.5 rounded-full bg-red-500 mr-2"></div>
+                      Offline
+                    </div>
+                  ))}
               </td>
               <td className="px-6 py-4">
                 <a
