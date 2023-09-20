@@ -28,8 +28,10 @@ const Home = () => {
         <tbody>
           {repository.map((repo) => (
             <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-              <td className="px-6 py-4">{repo.commit.commit_message}</td>
-              <td className="px-6 py-4">{repo.repository.name}</td>
+              <td className="px-6 py-4 truncate">
+                {repo.commit.commit_message}
+              </td>
+              <td className="px-6 py-4 truncate">{repo.repository.name}</td>
               <td className="px-6 py-4">
                 {repo.auto_commit &&
                   (repo.auto_commit.commit_status ? (
