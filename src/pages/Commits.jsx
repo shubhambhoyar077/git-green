@@ -1,10 +1,21 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchRepo } from '../redux/repo/repoSlice';
+import { postScheduleCommit } from '../redux/repository/repositorySlice';
 
 const Commits = () => {
   const { repo } = useSelector((state) => state.repo);
   const dispatch = useDispatch();
+
+  const { repository } = useSelector((state) => state.repository);
+  const [scheduleCommit, setScheuleCommit] = useState({
+    repository_id: null,
+    commit_message: '',
+    file_name: '',
+    branch_name: '',
+    content: '',
+    auto_commit_attributes: { daily_commit: false, weekend_commit: false },
+  });
 
   useEffect(() => {
     dispatch(fetchRepo({ method_data: { method: 'GET' } }));
