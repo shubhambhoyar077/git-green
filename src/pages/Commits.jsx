@@ -31,6 +31,20 @@ const Commits = () => {
     setScheuleCommit({ ...scheduleCommit, [name]: value });
   };
 
+  const handleCheckedBox = (e) => {
+    const { name, checked } = e.target;
+    const daily_commit = name == 'daily_commit' ? checked : false;
+    const weekend_commit = name == 'weekend_commit' ? checked : false;
+    setScheuleCommit({
+      ...scheduleCommit,
+      auto_commit_attributes: {
+        ...scheduleCommit.auto_commit_attributes,
+        daily_commit: daily_commit,
+        weekend_commit: weekend_commit,
+      },
+    });
+  };
+
   return (
     <section>
       <div className="py-8 px-4 mx-auto max-w-2xl lg:py-16">
@@ -133,8 +147,9 @@ const Commits = () => {
               <input
                 id="bordered-checkbox-1"
                 type="checkbox"
-                value=""
-                name="bordered-checkbox"
+                checked={scheduleCommit.auto_commit_attributes.daily_commit}
+                name="daily_commit"
+                onChange={handleCheckedBox}
                 className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               />
               <label
@@ -148,8 +163,9 @@ const Commits = () => {
               <input
                 id="bordered-checkbox-2"
                 type="checkbox"
-                value=""
-                name="bordered-checkbox"
+                checked={scheduleCommit.auto_commit_attributes.weekend_commit}
+                name="weekend_commit"
+                onChange={handleCheckedBox}
                 className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               />
               <label
