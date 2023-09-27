@@ -21,7 +21,7 @@ export const fetchRepo = createAsyncThunk(
 
       return data;
     } catch (error) {
-      return error;
+      return { message: error };
     }
   }
 );
@@ -39,14 +39,14 @@ export const repoSlice = createSlice({
       .addCase(fetchRepo.fulfilled, (state, action) => {
         return {
           ...state,
-          repo: action.payload,
+          repo: action.payload.repository,
           isLoading: false,
         };
       })
       .addCase(fetchRepo.rejected, (state, action) => ({
         ...state,
         isLoading: false,
-        error: action.payload,
+        error: action.payload.message,
       }));
   },
 });

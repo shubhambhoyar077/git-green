@@ -25,6 +25,32 @@ export const fetchRepository = createAsyncThunk(
   }
 );
 
+export const postScheduleCommit = createAsyncThunk(
+  'scheduleCommit/postScheduleCommit',
+  async (commitData) => {
+    try {
+      const response = await fetch(
+        'http://127.0.0.1:3000/api/scheduled_commits',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(commitData),
+        }
+      );
+      if (!response.ok) {
+        throw new Error('Please refreash page');
+      }
+      const data = await response.json();
+
+      return data;
+    } catch (error) {
+      return error;
+    }
+  }
+);
+
 export const repositorySlice = createSlice({
   name: 'repository',
   initialState,
@@ -45,7 +71,23 @@ export const repositorySlice = createSlice({
       .addCase(fetchRepository.rejected, (state, action) => ({
         ...state,
         isLoading: false,
-        error: action.payload,
+        error: action.payload.message,
+      }))
+      .addCase(postScheduleCommit.pending, (state) => ({
+        ...state,
+        isLoading: true,
+      }))
+      .addCase(postScheduleCommit.fulfilled, (state, action) => {
+        return {
+          ...state,
+          repository: [...state.repository, action.payload],
+          isLoading: false,
+        };
+      })
+      .addCase(postScheduleCommit.rejected, (state, action) => ({
+        ...state,
+        isLoading: false,
+        error: action.payload.message,
       }));
   },
 });
