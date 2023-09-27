@@ -48,6 +48,8 @@ const Commits = () => {
               </label>
               <select
                 id="category"
+                name="repository_id"
+                onChange={handleChange}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
               >
                 {repo.map((repository) => (
@@ -127,32 +129,32 @@ const Commits = () => {
               />
             </div>
 
-            <div class="flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
+            <div className="flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
               <input
                 id="bordered-checkbox-1"
                 type="checkbox"
                 value=""
                 name="bordered-checkbox"
-                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               />
               <label
-                for="bordered-checkbox-1"
+                htmlFor="bordered-checkbox-1"
                 class="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Schedule Daily
               </label>
             </div>
-            <div class="flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
+            <div className="flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
               <input
                 id="bordered-checkbox-2"
                 type="checkbox"
                 value=""
                 name="bordered-checkbox"
-                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               />
               <label
-                for="bordered-checkbox-2"
-                class="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                htmlFor="bordered-checkbox-2"
+                className="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Schedule WeekEnds
               </label>
