@@ -10,6 +10,8 @@ import GitProfile from './pages/GitProfilr';
 import Commits from './pages/Commits';
 import ScheduleCommit from './pages/ScheduleCommit';
 import Home from './pages/Home';
+import SignUp from './pages/SignUp';
+import SignIn from './pages/SignIn';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -19,6 +21,8 @@ const router = createBrowserRouter(
       <Route path="repository" element={<Repository />} />
       <Route path="commit" element={<Commits />} />
       <Route path="schdulecommit" element={<ScheduleCommit />} />
+      <Route path="sign_up" element={<SignUp />} />
+      <Route path="sign_in" element={<SignIn />} />
     </Route>
   )
 );
