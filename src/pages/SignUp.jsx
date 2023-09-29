@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const SignUp = () => {
   return (
     <section>
@@ -64,12 +66,12 @@ const SignUp = () => {
               </button>
               <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                 You have an account?{' '}
-                <a
-                  href="#"
+                <Link
+                  to="/sign_in"
                   className="font-medium text-primary-600 hover:underline dark:text-primary-500"
                 >
                   Sign in
-                </a>
+                </Link>
               </p>
             </form>
           </div>
