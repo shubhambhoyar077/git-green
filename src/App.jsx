@@ -14,6 +14,7 @@ import SignUp from './pages/SignUp';
 import SignIn from './pages/SignIn';
 import ForgetPassword from './pages/ForgetPassword';
 import ConfirmationMail from './pages/ConfirmationMail';
+import ConfirmationPage from './pages/ConfirmationPage';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,6 +28,7 @@ const router = createBrowserRouter(
       <Route path="sign_in" element={<SignIn />} />
       <Route path="forget_password" element={<ForgetPassword />} />
       <Route path="confirmation_mail" element={<ConfirmationMail />} />
+      <Route path="confirmation_page" element={<ConfirmationPage />} />
     </Route>
   )
 );
