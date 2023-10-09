@@ -34,7 +34,7 @@
 
 # 📖 [GitGreen] <a name="about-project"></a>
 
-**[GitGreen]** Scheduling daily and weekend commits, ensuring your GitHub contributions green 🌱. The main purpose of this project was to learn about Sidekiq and Sidekiq Scheduler. Sidekiq is used for background job processing, and Sidekiq Scheduler allows for the scheduling of recurring tasks.
+**[GitGreen]** Scheduling daily and weekend commits, ensuring your GitHub contributions are green 🌱. The main purpose of this project was to learn about Sidekiq and Sidekiq Scheduler. Sidekiq is used for background job processing, and Sidekiq Scheduler allows for the scheduling of recurring tasks.
 
 **Backend repository:** Private
 
